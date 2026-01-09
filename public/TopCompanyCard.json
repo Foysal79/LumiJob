@@ -1,0 +1,162 @@
+[
+  {
+    "_id": "1",
+    "name": "Microsoft",
+    "photo": "https://i.ibb.co/TB18zMP/Microsoft-logo-2012-svg.pngg",
+    "country": "USA",
+    "registration": "TN123456",
+    "industry": "Software Development"
+  },
+  {
+    "_id": "2",
+    "name": "Google",
+    "photo": "https://i.ibb.co/n15XM8q/Google-2015-logo-svg.webp",
+    "country": "Canada",
+    "registration": "GF987654",
+    "industry": "Software Development"
+  },
+  {
+    "_id": "3",
+    "name": "Amazon",
+    "photo": "https://i.ibb.co/7bPbLcC/current-logo-600x338.pngg",
+    "country": "UK",
+    "registration": "BMA112233",
+    "industry": "Software Development"
+  },
+  {
+    "_id": "4",
+    "name": "BlueWave Media",
+    "photo": "https://i.ibb.co/Yhk1y06/Illustrator-Logo.png",
+    "country": "Australia",
+    "registration": "BW445566",
+    "industry": "Media & Entertainment"
+  },
+  {
+    "_id": "5",
+    "name": "Skyline Constructions",
+    "photo": "https://i.ibb.co/Hx9H6Xs/Apple-Logo.png",
+    "country": "Germany",
+    "registration": "SC778899",
+    "industry": "Construction"
+  },
+  {
+    "_id": "6",
+    "name": "EcoEnergy Corp",
+    "photo": "https://i.ibb.co/KbyMXyy/2560px-Behance-logo-svg.png",
+    "country": "Sweden",
+    "registration": "EE334455",
+    "industry": "Renewable Energy"
+  },
+  {
+    "_id": "7",
+    "name": "Apex Finance",
+    "photo": "https://i.ibb.co/48CMCjN/Git-Hub-logo.png",
+    "country": "Singapore",
+    "registration": "AF667788",
+    "industry": "Finance & Banking"
+  },
+  {
+    "_id": "8",
+    "name": "NovaHealth",
+    "photo": "https://i.ibb.co/XySxG5h/6296331b2be59dc55430ca8a.png",
+    "country": "India",
+    "registration": "NH990011",
+    "industry": "Healthcare"
+  },
+  {
+    "_id": "9",
+    "name": "Quantum Tech Labs",
+    "photo": "https://i.ibb.co/7yBYJty/DICE-Ticketing-Company-logo-svg.png",
+    "country": "Japan",
+    "registration": "QT223344",
+    "industry": "Research & Development"
+  },
+  {
+    "_id": "10",
+    "name": "Starline Logistics",
+    "photo": "https://i.ibb.co/TB18zMP/Microsoft-logo-2012-svg.png",
+    "country": "Brazil",
+    "registration": "SL556677",
+    "industry": "Logistics & Transport"
+  },
+  {
+    "_id": "11",
+    "name": "NextGen Robotics",
+    "photo": "https://via.placeholder.com/150",
+    "country": "USA",
+    "registration": "NR112233",
+    "industry": "Robotics"
+  },
+  {
+    "_id": "12",
+    "name": "Fusion Retail",
+    "photo": "https://via.placeholder.com/150",
+    "country": "Canada",
+    "registration": "FR445566",
+    "industry": "Retail & E-commerce"
+  },
+  {
+    "_id": "13",
+    "name": "AquaPure Water Solutions",
+    "photo": "https://via.placeholder.com/150",
+    "country": "UK",
+    "registration": "AP778899",
+    "industry": "Water Treatment"
+  },
+  {
+    "_id": "14",
+    "name": "BrightStar Marketing",
+    "photo": "https://via.placeholder.com/150",
+    "country": "Australia",
+    "registration": "BS112244",
+    "industry": "Marketing & Advertising"
+  },
+  {
+    "_id": "15",
+    "name": "SolarWave Energy",
+    "photo": "https://via.placeholder.com/150",
+    "country": "Germany",
+    "registration": "SW556677",
+    "industry": "Solar Energy"
+  },
+  {
+    "_id": "16",
+    "name": "MediCore Pharmaceuticals",
+    "photo": "https://via.placeholder.com/150",
+    "country": "Sweden",
+    "registration": "MP889900",
+    "industry": "Pharmaceuticals"
+  },
+  {
+    "_id": "17",
+    "name": "Global Tech Services",
+    "photo": "https://via.placeholder.com/150",
+    "country": "Singapore",
+    "registration": "GT223344",
+    "industry": "IT Services"
+  },
+  {
+    "_id": "18",
+    "name": "HealthBridge",
+    "photo": "https://via.placeholder.com/150",
+    "country": "India",
+    "registration": "HB556677",
+    "industry": "Healthcare & Wellness"
+  },
+  {
+    "_id": "19",
+    "name": "InnovateX Labs",
+    "photo": "https://via.placeholder.com/150",
+    "country": "Japan",
+    "registration": "IX112233",
+    "industry": "Research & Innovation"
+  },
+  {
+    "_id": "20",
+    "name": "RapidTrans Logistics",
+    "photo": "https://via.placeholder.com/150",
+    "country": "Brazil",
+    "registration": "RT445566",
+    "industry": "Transport & Logistics"
+  }
+]

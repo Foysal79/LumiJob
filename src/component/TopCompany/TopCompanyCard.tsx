@@ -1,7 +1,7 @@
 import { IoLocationOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
-interface Company {
+export interface Company {
   name: string;
   photo: string;
   country: string;
@@ -11,7 +11,7 @@ interface Company {
 }
 
 const TopCompanyCard: React.FC<{ company: Company }> = ({ company }) => {
-  const { name, photo, country, registration, _id ,industry } = company;
+  const { name, photo, country, registration, _id, industry } = company;
 
   return (
     <Link to={`/company-details-profile/${_id}`}>

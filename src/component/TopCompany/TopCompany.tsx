@@ -1,23 +1,32 @@
 import { useEffect, useState } from "react";
-import TopCompanyCard from "./TopCompanyCard";
+import TopCompanyCard, { Company } from "./TopCompanyCard";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import companiesData from "./../../../public/TopCompanyCard.json"; // local JSON file
+
+
+
 
 const TopCompany = () => {
-  const [allCompany, setAllCompany] = useState([]);
-  const axiosPublic = useAxiosPublic();
+  // const [allCompany, setAllCompany] = useState([]);
+  // const axiosPublic = useAxiosPublic();
 
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axiosPublic.get('/company-data');
+  //       setAllCompany(response.data);
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, [axiosPublic]);
+
+  const [allCompany, setAllcompany] = useState<Company[]>([]);
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axiosPublic.get('/company-data');
-        setAllCompany(response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, [axiosPublic]);
+    setAllcompany(companiesData);
+  })
 
   const filterJob = allCompany.slice(2, 8);
 
