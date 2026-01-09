@@ -2,6 +2,7 @@ import Marquee from "react-fast-marquee";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import FeedbackCard from "./FeedbackCard";
+import feedbackData from "./../../../public/feedbackData.json";
 interface Data {
   _id: string;
   anyComments: string;
@@ -13,30 +14,42 @@ interface Data {
   PostedDate: string;
 }
 
-
 const FeedbackForWebsiteHome = () => {
+  // const axiosPublic = useAxiosPublic();
+  // const { data: feedback } = useQuery({
+  //   queryKey: ["feedback"],
+  //   queryFn: async () => {
+  //     const res = await axiosPublic.get(`/websiteFeedback`);
+  //     return res.data;
+  //   },
+  // });
+  // console.log(feedback);
+  // const filteredData = feedback?.reduce((acc: any, currentItem: any) => {
+  //   if (currentItem.role === 'candidate') {
+  //     acc.candidates.push(currentItem);
+  //   } else if (currentItem.role === 'company') {
+  //     acc.companies.push(currentItem);
+  //   }
+  //   return acc;
+  // }, { candidates: [], companies: [] });
 
-  const axiosPublic = useAxiosPublic();
-  const { data: feedback } = useQuery({
-    queryKey: ["feedback"],
-    queryFn: async () => {
-      const res = await axiosPublic.get(`/websiteFeedback`);
-      return res.data;
+  // Use JSON data directly instead of fetching
+  const feedback: Data[] = feedbackData;
+
+  const filteredData = feedback.reduce(
+    (acc: { candidates: Data[]; companies: Data[] }, currentItem: Data) => {
+      if (currentItem.role === "candidate") {
+        acc.candidates.push(currentItem);
+      } else if (currentItem.role === "company") {
+        acc.companies.push(currentItem);
+      }
+      return acc;
     },
-  });
-  console.log(feedback);
-  const filteredData = feedback?.reduce((acc: any, currentItem: any) => {
-    if (currentItem.role === 'candidate') {
-      acc.candidates.push(currentItem);
-    } else if (currentItem.role === 'company') {
-      acc.companies.push(currentItem);
-    }
-    return acc;
-  }, { candidates: [], companies: [] });
+    { candidates: [], companies: [] }
+  );
 
   const candidateData: Data[] = filteredData?.candidates;
   const companyData: Data[] = filteredData?.companies;
-
 
   console.log(candidateData);
   console.log(companyData);
@@ -48,11 +61,17 @@ const FeedbackForWebsiteHome = () => {
           Customer <span className="text-accentTwo">Reviews</span>
         </h3>
         <p className="text-sm md:text-lg xl:text-xl 2xl:text-2xl text-[#999999] text-center mx-4">
-          Lumijob exceeded my expectations with its intuitive interface and vast job opportunities
+          Lumijob exceeded my expectations with its intuitive interface and vast
+          job opportunities
         </p>
       </div>
       <div className="space-y-10">
-        <Marquee pauseOnHover={true} direction="right" gradient gradientWidth={50}>
+        <Marquee
+          pauseOnHover={true}
+          direction="right"
+          gradient
+          gradientWidth={50}
+        >
           <div className="flex ">
             {companyData?.map((info) => (
               <FeedbackCard key={info._id} info={info}></FeedbackCard>
@@ -68,9 +87,6 @@ const FeedbackForWebsiteHome = () => {
           </div>
         </Marquee>
       </div>
-
-
-
     </div>
   );
 };

@@ -1,0 +1,202 @@
+[
+  {
+    "_id": "1",
+    "anyComments": "This platform is really intuitive and user-friendly. I loved how easy it was to navigate and find exactly what I needed.",
+    "interfaceRating": 5,
+    "supportRating": 5,
+    "UserNames": "Alice Johnson",
+    "email": "alice@example.com",
+    "role": "candidate",
+    "PostedDate": "2026-01-10"
+  },
+  {
+    "_id": "2",
+    "anyComments": "The interface is clean, but I found some parts a bit slow. Overall, a decent experience.",
+    "interfaceRating": 4,
+    "supportRating": 4,
+    "UserNames": "Bob Smith",
+    "email": "bob@example.com",
+    "role": "company",
+    "PostedDate": "2026-01-09"
+  },
+  {
+    "_id": "3",
+    "anyComments": "Amazing experience! The features are very helpful for my daily tasks.",
+    "interfaceRating": 5,
+    "supportRating": 5,
+    "UserNames": "Charlie Brown",
+    "email": "charlie@example.com",
+    "role": "candidate",
+    "PostedDate": "2026-01-08"
+  },
+  {
+    "_id": "4",
+    "anyComments": "Not bad, but there are some UI bugs that need fixing.",
+    "interfaceRating": 3,
+    "supportRating": 3,
+    "UserNames": "David Wilson",
+    "email": "david@example.com",
+    "role": "company",
+    "PostedDate": "2026-01-07"
+  },
+  {
+    "_id": "5",
+    "anyComments": "I love the color scheme and the layout. Makes everything so easy to understand.",
+    "interfaceRating": 5,
+    "supportRating": 5,
+    "UserNames": "Ella Davis",
+    "email": "ella@example.com",
+    "role": "candidate",
+    "PostedDate": "2026-01-06"
+  },
+  {
+    "_id": "6",
+    "anyComments": "Could be improved. Some buttons are not responsive on mobile.",
+    "interfaceRating": 3,
+    "supportRating": 3,
+    "UserNames": "Frank Thomas",
+    "email": "frank@example.com",
+    "role": "company",
+    "PostedDate": "2026-01-05"
+  },
+  {
+    "_id": "7",
+    "anyComments": "Fantastic support and very interactive design. Totally recommend!",
+    "interfaceRating": 5,
+    "supportRating": 5,
+    "UserNames": "Grace Lee",
+    "email": "grace@example.com",
+    "role": "candidate",
+    "PostedDate": "2026-01-04"
+  },
+  {
+    "_id": "8",
+    "anyComments": "Decent experience but lacks some advanced features I was expecting.",
+    "interfaceRating": 4,
+    "supportRating": 4,
+    "UserNames": "Hannah White",
+    "email": "hannah@example.com",
+    "role": "company",
+    "PostedDate": "2026-01-03"
+  },
+  {
+    "_id": "9",
+    "anyComments": "I struggled with the navigation at first, but it got easier over time.",
+    "interfaceRating": 3,
+    "supportRating": 3,
+    "UserNames": "Ian Martinez",
+    "email": "ian@example.com",
+    "role": "candidate",
+    "PostedDate": "2026-01-02"
+  },
+  {
+    "_id": "10",
+    "anyComments": "Great design and excellent usability. Will keep using it.",
+    "interfaceRating": 5,
+    "supportRating": 5,
+    "UserNames": "Jane Roberts",
+    "email": "jane@example.com",
+    "role": "company",
+    "PostedDate": "2026-01-01"
+  },
+  {
+    "_id": "11",
+    "anyComments": "The platform is okay, but I noticed some lag when switching pages.",
+    "interfaceRating": 3,
+    "supportRating": 3,
+    "UserNames": "Kyle Turner",
+    "email": "kyle@example.com",
+    "role": "candidate",
+    "PostedDate": "2025-12-31"
+  },
+  {
+    "_id": "12",
+    "anyComments": "Really helpful interface and smooth experience. Love the animations.",
+    "interfaceRating": 5,
+    "supportRating": 5,
+    "UserNames": "Lily Evans",
+    "email": "lily@example.com",
+    "role": "company",
+    "PostedDate": "2025-12-30"
+  },
+  {
+    "_id": "13",
+    "anyComments": "Not very intuitive initially, but with some practice, it becomes easy.",
+    "interfaceRating": 4,
+    "supportRating": 4,
+    "UserNames": "Mike Harris",
+    "email": "mike@example.com",
+    "role": "candidate",
+    "PostedDate": "2025-12-29"
+  },
+  {
+    "_id": "14",
+    "anyComments": "Superb design! The interactive elements are really engaging.",
+    "interfaceRating": 5,
+    "supportRating": 5,
+    "UserNames": "Nina Scott",
+    "email": "nina@example.com",
+    "role": "company",
+    "PostedDate": "2025-12-28"
+  },
+  {
+    "_id": "15",
+    "anyComments": "I expected more features, but the current setup works fine for basic tasks.",
+    "interfaceRating": 3,
+    "supportRating": 3,
+    "UserNames": "Oscar Young",
+    "email": "oscar@example.com",
+    "role": "candidate",
+    "PostedDate": "2025-12-27"
+  },
+  {
+    "_id": "16",
+    "anyComments": "Love the simplicity and the responsiveness of the interface.",
+    "interfaceRating": 5,
+    "supportRating": 5,
+    "UserNames": "Paula King",
+    "email": "paula@example.com",
+    "role": "company",
+    "PostedDate": "2025-12-26"
+  },
+  {
+    "_id": "17",
+    "anyComments": "It's functional but not very exciting. Could use some improvements.",
+    "interfaceRating": 3,
+    "supportRating": 3,
+    "UserNames": "Quinn Allen",
+    "email": "quinn@example.com",
+    "role": "candidate",
+    "PostedDate": "2025-12-25"
+  },
+  {
+    "_id": "18",
+    "anyComments": "Amazing workflow and very easy to get things done quickly.",
+    "interfaceRating": 5,
+    "supportRating": 5,
+    "UserNames": "Rachel Moore",
+    "email": "rachel@example.com",
+    "role": "company",
+    "PostedDate": "2025-12-24"
+  },
+  {
+    "_id": "19",
+    "anyComments": "Interface is okay, but I wish there were more customization options.",
+    "interfaceRating": 4,
+    "supportRating": 4,
+    "UserNames": "Steve Clark",
+    "email": "steve@example.com",
+    "role": "candidate",
+    "PostedDate": "2025-12-23"
+  },
+  {
+    "_id": "20",
+    "anyComments": "Smooth experience overall. The features are exactly what I needed.",
+    "interfaceRating": 5,
+    "supportRating": 5,
+    "UserNames": "Tina Wright",
+    "email": "tina@example.com",
+    "role": "company",
+    "PostedDate": "2025-12-22"
+  }
+]

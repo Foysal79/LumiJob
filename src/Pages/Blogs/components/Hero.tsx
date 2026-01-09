@@ -12,26 +12,7 @@ const Hero = () => {
             News, Seminars & <br /> Insides of Tech <br /> Fields.
           </h3>
 
-          {/* <img
-            src={green}
-            alt="blogBg"
-            className="absolute -left-52 -top-72 w-[1000px]"
-          />
-          <img
-            src={aqua}
-            alt="blogBg"
-            className="absolute -right-56 -top-20 w-[1000px]"
-          />
-          <img
-            src={yellow}
-            alt="blogBg"
-            className="absolute right-10 top-36 w-[1000px]"
-          />
-          <img
-            src={purple}
-            alt="blogBg"
-            className="absolute -right-96 top-5 w-[1000px]"
-          /> */}
+          
 
           <p className="text-xs lg:px-3 md:text-lg  lg:text-xl font-normal relative z-10">
             Discover cutting-edge advancements in rapidly growing industries.

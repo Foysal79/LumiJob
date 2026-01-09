@@ -87,12 +87,10 @@ export const router = createBrowserRouter([
         path: "/optionsSubscribe",
         element: <OptionSubscribe></OptionSubscribe>,
       },
-
       {
         path: "/insights",
         element: <Insights />,
       },
-
       {
         path: "/collaboration-hub",
         element: <CollaborationHub />,

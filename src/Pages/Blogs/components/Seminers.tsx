@@ -10,6 +10,14 @@ const Seminers = () => {
     axiosPublic.get("/seminars").then((res) => setSeminars(res.data));
   }, []);
 
+  // const [seminars, setSeminars] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("/seminar.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setSeminars(data));
+  // }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-[#F2F8F5] from-35% via-[#F5DED9] via-60% to-[#F2F8F5] to-100% ... pb-10">
       <div className="max-w-screen-2xl mx-auto lg:flex lg:space-x-10 px-4 lg:px-20">

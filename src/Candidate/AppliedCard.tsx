@@ -24,6 +24,7 @@ const AppliedCard: React.FC<prop> = ({ job, handleDelete }) => {
   };
 
   const id = job._id;
+  console.log("jobs Id ", id);
 
   const formatDeadlineDate = (deadline: any) => {
     const formattedDate = new Date(deadline).toLocaleDateString("en-GB");
@@ -77,6 +78,8 @@ const AppliedCard: React.FC<prop> = ({ job, handleDelete }) => {
     },
     enabled: !!id,
   });
+
+  console.log(job);
 
   return (
     <div
@@ -156,7 +159,7 @@ const AppliedCard: React.FC<prop> = ({ job, handleDelete }) => {
           />
         </div>
       )}
-      {cancel && companyFeedbacks && (
+      {(cancel && companyFeedbacks) && (
         <div className="absolute top-10 -right-36 xl:right-1">
           <TbMessage
             onClick={() =>

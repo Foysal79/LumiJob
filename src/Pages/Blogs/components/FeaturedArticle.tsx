@@ -14,7 +14,7 @@ interface BlogData {
 }
 
 const FeaturedArticle = () => {
-  const axiosPublic = useAxiosPublic();
+   const axiosPublic = useAxiosPublic();
   const [datas, setData] = useState<BlogData[] | null>(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -23,6 +23,20 @@ const FeaturedArticle = () => {
       setLoading(false);
     });
   }, []);
+
+  // // fetch data from public/blogs.json
+  // useEffect(() => {
+  //   fetch("/blog.json")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.error("Error loading blogs:", err);
+  //       setLoading(false);
+  //     });
+  // }, []);
 
   const shuffleArray = (array: any) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -51,7 +65,9 @@ const FeaturedArticle = () => {
         </h1>
         {/* for computer */}
         <div className="hidden xl:block">
-          {loading ? <InsidesLoading /> :
+          {loading ? (
+            <InsidesLoading />
+          ) : (
             <div className="grid grid-cols-4 gap-5">
               {slicedData &&
                 slicedData.map((item: any, idx: Key | null | undefined) => {
@@ -59,10 +75,11 @@ const FeaturedArticle = () => {
                     <Link
                       to={`/insights/${item._id}`}
                       key={idx}
-                      className={`${idx === 0
-                        ? "col-span-2 row-span-2"
-                        : "col-span-1 row-span-1"
-                        }`}
+                      className={`${
+                        idx === 0
+                          ? "col-span-2 row-span-2"
+                          : "col-span-1 row-span-1"
+                      }`}
                     >
                       <div className="">
                         <div className=" p-2 hover:bg-white hover:shadow-xl duration-700 h-full">
@@ -95,10 +112,9 @@ const FeaturedArticle = () => {
                             <p>{item.readTime} read</p>
                           </div>
                           <div
-                            className={`${idx === 0
-                              ? " p-2"
-                              : "p-2 space-y-2"
-                              }`}
+                            className={`${
+                              idx === 0 ? " p-2" : "p-2 space-y-2"
+                            }`}
                           >
                             {idx === 0 ? (
                               <h1 className="text-3xl font-heading font-semibold mb-3">
@@ -129,8 +145,7 @@ const FeaturedArticle = () => {
                   );
                 })}
             </div>
-
-          }
+          )}
         </div>
         {/* for mobile */}
         <div className="xl:hidden block">
