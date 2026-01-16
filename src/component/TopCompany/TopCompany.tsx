@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import TopCompanyCard, { Company } from "./TopCompanyCard";
-import useAxiosPublic from "../../hooks/useAxiosPublic";
+// useAxiosPublic from "../../hooks/useAxiosPublic";
 import companiesData from "./../../../public/TopCompanyCard.json"; // local JSON file
 
 

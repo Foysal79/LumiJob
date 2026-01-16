@@ -37,7 +37,7 @@ const Login: React.FC = () => {
         autoClose: 2000,
       });
       setLoading(false);
-     
+
       navigate("/");
     } catch (error) {
       toast.error("Invalid user credentials.", {
@@ -46,7 +46,6 @@ const Login: React.FC = () => {
         autoClose: 2000,
       });
       setLoading(false);
-     
     }
   };
 
@@ -87,15 +86,6 @@ const Login: React.FC = () => {
                 </label>
                 <input
                   type={showPassword ? "text" : "password"}
-                  {...register("password", {
-                    required: "Password is required",
-                    pattern: {
-                      value:
-                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/,
-                      message:
-                        "Password must meet the requirements: at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 6 characters long.",
-                    },
-                  })}
                   placeholder="at least 6 character"
                   className="input-md md:input-lg border-b-4 outline-none rounded-lg  bg-[#F7FBFF] hover:border-b-teal-500 duration-500"
                 />

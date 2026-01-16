@@ -38,25 +38,33 @@ const Signup: React.FC = () => {
 
       await updateUserProfile(data.name);
 
-      const userInfo = {
+      // const userInfo = {
+      //   name: data.name,
+      //   email: data.email,
+      //   password: data.password,
+      // };
+
+      await axiosPublic.post("/users", {
         name: data.name,
         email: data.email,
         password: data.password,
-      };
-
-      // for dev Delete in prod
-      axiosPublic.post("/users", userInfo)
-      .then(() => {
-      
-        toast.success("User created successfully", {
-          position: "top-center",
-          hideProgressBar: true,
-          autoClose: 2000,
-        });
       });
-
-      setLoading(false);
+      toast.success("User created successfully");
       navigate("/signup/role");
+
+      //   // for dev Delete in prod
+      //  await axiosPublic.post("/users", userInfo)
+      //   .then(() => {
+
+      //     toast.success("User created successfully", {
+      //       position: "top-center",
+      //       hideProgressBar: true,
+      //       autoClose: 2000,
+      //     });
+      //   });
+
+      //   setLoading(false);
+      //   navigate("/signup/role");
     } catch (error: any) {
       if (error.code === "auth/email-already-in-use") {
         // Firebase error indicating that the email already exists
@@ -107,7 +115,7 @@ const Signup: React.FC = () => {
                 </label>
                 <input
                   type="text"
-                  {...register("name", { required: "Name is required" })}
+                  {...register("name")}
                   placeholder="Your Name"
                   className="input-md md:input-lg rounded-lg border-b-4 hover:border-b-teal-500 duration-500 outline-none bg-[#F7FBFF]"
                 />
@@ -119,7 +127,7 @@ const Signup: React.FC = () => {
                 </label>
                 <input
                   type="email"
-                  {...register("email", { required: "Email is required" })}
+                  {...register("email")}
                   placeholder="example@gmail.com"
                   className="input-md md:input-lg rounded-lg border-b-4 hover:border-b-teal-500 duration-500 outline-none bg-[#F7FBFF]"
                 />
@@ -135,12 +143,6 @@ const Signup: React.FC = () => {
                   type={showPassword ? "text" : "password"}
                   {...register("password", {
                     required: "Password is required",
-                    pattern: {
-                      value:
-                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#^/\|])[A-Za-z\d@$!%*?&#^/\|]{6,}$/,
-                      message:
-                        "Password must meet the requirements: at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 6 characters long.",
-                    },
                   })}
                   placeholder="at least 6 character long"
                   className="input-md md:input-lg border-b-4 hover:border-b-teal-500 duration-500 outline-none bg-[#F7FBFF] mb-4"

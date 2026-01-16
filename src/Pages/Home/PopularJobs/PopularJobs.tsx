@@ -3,40 +3,51 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Job from "./Job";
 import JobCard from "./JobCard";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
+// import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import useSectorAndSkills from "../../../hooks/useSectorAndSkills";
 import PopularJobsLoading from "../../../component/err & loading/PopularJobsLoading";
+// import jobsData from "./../../../../public/PopularJobs.json";
 
 const PopularJobs = () => {
   const [popularJobs, setPopularJobs] = useState<Job[]>([]);
   const [tabIndex, setTabIndex] = useState(0);
-  const axiosPublic = useAxiosPublic();
+  // const axiosPublic = useAxiosPublic();
   const [loading, setLoading] = useState(true);
 
   const { sectors } = useSectorAndSkills();
 
-  useEffect(() => {
-    axiosPublic.get("/all-job-posts")
-      .then((res) => {
-        setPopularJobs(res.data);
+  // useEffect(() => {
+  //   axiosPublic.get("/all-job-posts")
+  //     .then((res) => {
+  //       setPopularJobs(res.data);
 
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
+
+  useEffect(() => {
+    fetch("/PopularJobs.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setPopularJobs(data);
         setLoading(false);
-      })
-      .catch((error) => console.log(error));
+      });
   }, []);
 
-  const slicedSectors = sectors.slice(0, 6);
-
+  console.log(popularJobs);
+  const slicedSectors = sectors?.slice(0, 6);
+console.log(slicedSectors);
   // sort popular jobs by date here only show jobs that are away by 5 days from current date
 
   const filterJob = popularJobs?.filter(
     (job) => job.sectorType === sectors[tabIndex]?.sectorType
   );
-   
+
   //slice responsive
-  let sliceEnd = 6;
+  let sliceEnd = 4;
   if (window.innerWidth >= 1600) {
-    sliceEnd = 8;
+    sliceEnd = 6;
   }
   const slicedJobs = filterJob?.slice(0, sliceEnd);
 
@@ -52,20 +63,21 @@ const PopularJobs = () => {
           </p>
         </div>
 
+
         <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
           <TabList>
             {slicedSectors?.map((sector: any) => (
-              <Tab key={sector._id}>{sector.sectorType}</Tab>
+              <Tab key={sector?._id}>{sector?.sectorType}</Tab>
             ))}
           </TabList>
           {sectors?.map((sector: any) => (
-            <TabPanel key={sector._id}>
+            <TabPanel key={sector?._id}>
               {loading ? (
                 <PopularJobsLoading />
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 my-12">
                   {slicedJobs?.map((job) => (
-                    <JobCard key={job._id} job={job}></JobCard>
+                    <JobCard key={job?._id} job={job}></JobCard>
                   ))}
                 </div>
               )}

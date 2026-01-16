@@ -1,0 +1,22 @@
+[
+  { "_id": "1", "skill": "JavaScript" },
+  { "_id": "2", "skill": "TypeScript" },
+  { "_id": "3", "skill": "React" },
+  { "_id": "4", "skill": "Next.js" },
+  { "_id": "5", "skill": "Node.js" },
+  { "_id": "6", "skill": "Express.js" },
+  { "_id": "7", "skill": "MongoDB" },
+  { "_id": "8", "skill": "UI/UX Design" },
+  { "_id": "9", "skill": "Figma" },
+  { "_id": "10", "skill": "Data Analysis" },
+  { "_id": "11", "skill": "Python" },
+  { "_id": "12", "skill": "Machine Learning" },
+  { "_id": "13", "skill": "SQL" },
+  { "_id": "14", "skill": "Marketing Strategy" },
+  { "_id": "15", "skill": "SEO" },
+  { "_id": "16", "skill": "Graphic Design" },
+  { "_id": "17", "skill": "Adobe Illustrator" },
+  { "_id": "18", "skill": "Supply Chain Management" },
+  { "_id": "19", "skill": "Logistics Planning" },
+  { "_id": "20", "skill": "Social Media Management" }
+]

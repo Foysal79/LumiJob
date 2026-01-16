@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import useAxiosPublic from "../../hooks/useAxiosPublic";
+// import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 // import CFIlters from "./CFIlters";
 import FindCandidateCard from "./FindCandidateCard";
@@ -9,29 +9,63 @@ import CPagination from "./CPagination";
 import CSearch from "./CSearch";
 import { Helmet } from "react-helmet-async";
 import GoToTop from "../../component/GoToTop/GoToTop";
+import candidatesData from "../../../public/candidates.json";
+
+
+
+
+
+
 
 const FindCandidate: React.FC = () => {
   const [currentCandidates, setCurrentCandidates] = useState<Candidate[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [dataPerPage, setDataPerPage] = useState<number>(9);
-  const axiosPublic = useAxiosPublic();
+  // const axiosPublic = useAxiosPublic();
 
-  const handleDataPerPageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleDataPerPageChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     setDataPerPage(Number(event.target.value));
     setCurrentPage(1);
   };
 
+  // const { data: allCandidates = [] } = useQuery({
+  //   queryKey: ["allCandidates"],
+  //   queryFn: async () => {
+  //     const res = await axiosPublic.get(`/all-candidate-data`);
+  //     return res.data;
+  //   },
+  // });
+
   const { data: allCandidates = [] } = useQuery({
     queryKey: ["allCandidates"],
     queryFn: async () => {
-      const res = await axiosPublic.get(`/all-candidate-data`);
-      return res.data;
+      // fake API delay (optional)
+      await new Promise((res) => setTimeout(res, 300));
+      return candidatesData;
     },
   });
 
-  useEffect(() => {
-    setCurrentCandidates(allCandidates);
-  }, [allCandidates]);
+
+    const normalizeCandidates = (data: any[]): Candidate[] =>
+  data.map((c) => ({
+    ...c,
+    salaryRangeMin: c.salaryRangeMin ?? 0,
+    salaryRangeMax: c.salaryRangeMax ?? 0,
+    userId: c.userId ?? "unknown",
+    status: c.status ?? "pending",
+    packages: c.packages ?? [],
+  }));
+
+// usage
+useEffect(() => {
+  setCurrentCandidates(normalizeCandidates(allCandidates));
+}, [allCandidates]);
+
+  // useEffect(() => {
+  //   setCurrentCandidates(allCandidates);
+  // }, [allCandidates]);
 
   //   const handleFilterChange = (filteredData: Job[]) => {
   //     setCurrentCandidates(filteredData);
@@ -56,8 +90,9 @@ const FindCandidate: React.FC = () => {
       <div className="">
         <div className="mt-14 mb-5 w-full lg:w-[70%] 2xl:w-[50%] mx-auto px-1">
           <h3 className="text-4xl md:text-4xl xl:text-5xl font-hanken font-semibold text-center mb-4 xl:mb-12">
-            Find your expected <span className="text-[#4869DD]">Skilled</span> and <span className="text-[#4869DD]">Talented </span>
-             people here!
+            Find your expected <span className="text-[#4869DD]">Skilled</span>{" "}
+            and <span className="text-[#4869DD]">Talented </span>
+            people here!
           </h3>
           {/*=======> Search <============= */}
           <CSearch onSearchResult={handleSearchResult}></CSearch>

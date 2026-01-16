@@ -24,19 +24,19 @@ const FeaturedArticle = () => {
     });
   }, []);
 
-  // // fetch data from public/blogs.json
-  // useEffect(() => {
-  //   fetch("/blog.json")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setData(data);
-  //       setLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.error("Error loading blogs:", err);
-  //       setLoading(false);
-  //     });
-  // }, []);
+  // fetch data from public/blogs.json
+  useEffect(() => {
+    fetch("/blog.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error loading blogs:", err);
+        setLoading(false);
+      });
+  }, []);
 
   const shuffleArray = (array: any) => {
     for (let i = array.length - 1; i > 0; i--) {

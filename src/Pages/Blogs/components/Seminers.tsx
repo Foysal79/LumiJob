@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 import { FaCircleUser } from "react-icons/fa6";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
+// import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const Seminers = () => {
-  const axiosPublic = useAxiosPublic();
-  const [seminars, setSeminars] = useState([]);
-
-  useEffect(() => {
-    axiosPublic.get("/seminars").then((res) => setSeminars(res.data));
-  }, []);
-
+  // const axiosPublic = useAxiosPublic();
   // const [seminars, setSeminars] = useState([]);
 
   // useEffect(() => {
-  //   fetch("/seminar.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setSeminars(data));
+  //   axiosPublic.get("/seminars").then((res) => setSeminars(res.data));
   // }, []);
+
+  const [seminars, setSeminars] = useState([]);
+
+  useEffect(() => {
+    fetch("/seminar.json")
+      .then((res) => res.json())
+      .then((data) => setSeminars(data));
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-[#F2F8F5] from-35% via-[#F5DED9] via-60% to-[#F2F8F5] to-100% ... pb-10">

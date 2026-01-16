@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
 import { LuDot } from "react-icons/lu";
 import { FaDollarSign } from "react-icons/fa";
-import useAxiosPublic from "../../hooks/useAxiosPublic";
+// import useAxiosPublic from "../../hooks/useAxiosPublic";
 import UniLoader from "../../component/err & loading/UniLoader";
 import { ToastContainer, toast } from "react-toastify";
 import useAuth from "../../hooks/useAuth";
@@ -45,7 +45,7 @@ interface JobDetails {
 
 const JobsDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const axiosPublic = useAxiosPublic();
+  // const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
   const [job, setJobs] = useState<JobDetails>();
   const { user, role, premium } = useAuth();
@@ -66,14 +66,32 @@ const JobsDetails: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // useEffect(() => {
+  //   axiosPublic
+  //     .get(`/single-job/${id}`)
+  //     .then((res) => {
+  //       setJobs(res.data);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
+
   useEffect(() => {
-    axiosPublic
-      .get(`/single-job/${id}`)
-      .then((res) => {
-        setJobs(res.data);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+    const loadSingle = async () => {
+      try {
+        const res = await fetch("/PopularJobs.json");
+        const data = await res.json();
+
+        const found = data.find((j: any) => j._id === id);
+
+        if (found) setJobs(found);
+        else setJobs(undefined);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
+    loadSingle();
+  }, [id]);
 
   const {
     title,
@@ -90,7 +108,7 @@ const JobsDetails: React.FC = () => {
     skills,
     experience,
     perks,
-    application
+    application,
   } = job || {};
 
   const formatDateTime = (dateTimeString: any) => {
@@ -133,7 +151,6 @@ const JobsDetails: React.FC = () => {
     axiosSecure
       .post(`/apply-to-jobs`, jobDetails)
       .then((res) => {
-  
         if (res.data.insertedId) {
           toast.success("Applied Successfully", {
             position: "top-center",
@@ -234,7 +251,6 @@ const JobsDetails: React.FC = () => {
               axiosSecure
                 .post("/set-resume", data)
                 .then((res) => {
-                
                   if (res.data.message === "true") {
                     const { _id, ...jobWithoutId } = job as JobDetails;
 
@@ -246,11 +262,9 @@ const JobsDetails: React.FC = () => {
                       status: "unopened",
                     };
 
-
                     axiosSecure
                       .post(`/apply-to-jobs`, jobDetails)
                       .then((res) => {
-                       
                         if (res.data.insertedId) {
                           toast.success("Applied Successfully", {
                             position: "top-center",
@@ -600,7 +614,10 @@ const JobsDetails: React.FC = () => {
                         ></Share>
                       </>
                     ) : (
-                          <Link className=" hover:text-white py-2 border-2 text-blue-700 border-blue-700 px-4 rounded hover:bg-blue-700" to={"/login"}>
+                      <Link
+                        className=" hover:text-white py-2 border-2 text-blue-700 border-blue-700 px-4 rounded hover:bg-blue-700"
+                        to={"/login"}
+                      >
                         Login to get your link
                       </Link>
                     )}

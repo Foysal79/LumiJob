@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "ch-001",
+    "img": "https://i.postimg.cc/6pq5DXHj/thisisengineering-raeng-HDPbafem-BI4-unsplash.jpg",
+    "challengeTitle": "Build a Job Portal Dashboard",
+    "type": "Frontend Challenge",
+    "submissionDate": "2025-02-15T23:59:00Z",
+    "description": "Create a responsive job portal dashboard using React, Tailwind CSS, and modern UI patterns. Focus on performance, accessibility, and clean component architecture."
+  },
+  {
+    "_id": "ch-002",
+    "img": "https://i.postimg.cc/LXmS480t/yura-macro-P885-Dh-Sf12-U-unsplash.jpg",
+    "challengeTitle": "REST API for Recruitment Platform",
+    "type": "Backend Challenge",
+    "submissionDate": "2025-02-20T23:59:00Z",
+    "description": "Design and implement a RESTful API using Node.js, Express, and MongoDB to support user authentication, job posting, and application workflows."
+  },
+  {
+    "_id": "ch-003",
+    "img": "https://i.postimg.cc/6pq5DXHj/thisisengineering-raeng-HDPbafem-BI4-unsplash.jpg",
+    "challengeTitle": "Candidate Matching Algorithm",
+    "type": "Algorithm Challenge",
+    "submissionDate": "2025-02-25T23:59:00Z",
+    "description": "Implement an efficient candidate-to-job matching algorithm based on skills, experience, and preferences. Provide time complexity analysis and test cases."
+  },
+  {
+    "_id": "ch-004",
+    "img": "https://i.postimg.cc/6pq5DXHj/thisisengineering-raeng-HDPbafem-BI4-unsplash.jpg",
+    "challengeTitle": "UI/UX Redesign for Career Platform",
+    "type": "Design Challenge",
+    "submissionDate": "2025-03-01T23:59:00Z",
+    "description": "Redesign the UI/UX of a career-focused web platform. Submit Figma designs along with design rationale focusing on usability and user psychology."
+  }
+]

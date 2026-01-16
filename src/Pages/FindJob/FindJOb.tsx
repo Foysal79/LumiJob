@@ -7,7 +7,7 @@ import NotificationCard from "./NotificationCard";
 import { useQuery } from "@tanstack/react-query";
 import Job from "../Home/PopularJobs/Job";
 import Pagination from "./Pagination";
-import useAxiosPublic from "../../hooks/useAxiosPublic";
+// import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { Helmet } from "react-helmet-async";
 // import Loading from "../Blogs/components/err/Loading";
 import JobLoading from "../../component/err & loading/JobLoading";
@@ -17,13 +17,22 @@ const FindJob: React.FC = () => {
   const [currentJobs, setCurrentJobs] = useState<Job[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [jobsPerPage] = useState<number>(6);
-  const axiosPublic = useAxiosPublic();
+  // const axiosPublic = useAxiosPublic();
 
-  const { data: popularJobs, isLoading = [] } = useQuery({
+  // const { data: popularJobs, isLoading = [] } = useQuery({
+  //   queryKey: ["popularJobs"],
+  //   queryFn: async () => {
+  //     const res = await axiosPublic.get(`/all-job-posts`);
+  //     return res.data;
+  //   },
+  // });
+
+  // ✅ JSON file fetch (public/PopularJobs.json)
+  const { data: popularJobs = [], isLoading } = useQuery({
     queryKey: ["popularJobs"],
     queryFn: async () => {
-      const res = await axiosPublic.get(`/all-job-posts`);
-      return res.data;
+      const res = await fetch("/PopularJobs.json");
+      return res.json();
     },
   });
 

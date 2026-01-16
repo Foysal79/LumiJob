@@ -17,9 +17,10 @@ interface JobCardsProps {
 }
 
 const JobCard: React.FC<JobCardsProps> = ({ job }) => {
-  const { _id, picture, location, title, salaryRange, deadline ,jobType  } = job;
+  const { _id, picture, location, title, salaryRange, deadline, jobType } = job;
   const jobPostId = _id;
 
+  console.log(_id);
   useEffect(() => {
     Aos.init();
   }, []);
@@ -44,8 +45,7 @@ const JobCard: React.FC<JobCardsProps> = ({ job }) => {
         <div className="mt-4">
           <h3 className="text-lg font-semibold text-gray-800 mb-2">{title}</h3>
           <p className="text-sm text-gray-600 flex items-center gap-1">
-            <FaMapMarkerAlt className="text-gray-500" />{" "}
-            <span>{location}</span>
+            <FaMapMarkerAlt className="text-gray-500" /> <span>{location}</span>
           </p>
         </div>
         <div className="flex flex-wrap gap-3 items-center mt-4">
@@ -72,6 +72,7 @@ const JobCard: React.FC<JobCardsProps> = ({ job }) => {
             to={`details/${jobPostId}`}
             className="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold text-xs rounded-full transition duration-300 ease-in-out"
           >
+            
             Details
           </Link>
         </div>

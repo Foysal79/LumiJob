@@ -1,30 +1,43 @@
-import { useQuery } from "@tanstack/react-query";
-import useAxiosPublic from "./useAxiosPublic";
+import { useEffect, useState } from "react";
+
+type Sector = { _id: string; sectorType: string };
+type Skill = { _id: string; skill: string };
 
 const useSectorAndSkills = () => {
-    const axiosPublic = useAxiosPublic();
-    const { refetch: refetchSectors, data: sectors = [] } = useQuery({
-        queryKey: ['sectors'],
-        queryFn: async () => {
-            const res = await axiosPublic.get('/get-sectors');
-            return res.data;
-        }
-    });
+  const [sectors, setSectors] = useState<Sector[]>([]);
+  const [skills, setSkills] = useState<Skill[]>([]);
+  const [loading, setLoading] = useState(false);
 
-    const { refetch: refetchSkills, data: skills = [] }: { refetch: () => void, data?: any[] } = useQuery({
-        queryKey: ['skills'],
-        queryFn: async () => {
-            const res = await axiosPublic.get('/get-skills');
-            return res.data;
-        }
-    });
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const [sectorRes, skillRes] = await Promise.all([
+        fetch("/sectors.json"),
+        fetch("/skills.json"),
+      ]);
 
-    const refetch = () => {
-        refetchSectors();
-        refetchSkills();
-    };
+      const sectorData = await sectorRes.json();
+      const skillData = await skillRes.json();
 
-    return { sectors, skills, refetch };
+      setSectors(sectorData);
+      setSkills(skillData);
+    } catch (error) {
+      console.log("Failed to load JSON data", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  // 🔁 React Query refetch equivalent
+  const refetch = () => {
+    fetchData();
+  };
+
+  return { sectors, skills, loading, refetch };
 };
 
 export default useSectorAndSkills;

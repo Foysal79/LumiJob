@@ -1,6 +1,6 @@
 import Marquee from "react-fast-marquee";
-import useAxiosPublic from "../../hooks/useAxiosPublic";
-import { useQuery } from "@tanstack/react-query";
+// import useAxiosPublic from "../../hooks/useAxiosPublic";
+// import { useQuery } from "@tanstack/react-query";
 import FeedbackCard from "./FeedbackCard";
 import feedbackData from "./../../../public/feedbackData.json";
 interface Data {
