@@ -1,6 +1,6 @@
 # LumiJobs - Where Opportunities Meet Expertise
 
-- Sneak-peak : [https://lumijobs-84d3b.web.app/](https://lumijob.netlify.app/)
+- Sneak-peak : https://lumijob.netlify.app
 
 ## Overview
 
